@@ -6,6 +6,8 @@ ruby '2.7.1'
 # my gems
 gem 'haml'
 gem 'pg', '~> 1.2.3'
+gem 'jquery-ui-rails', '5.0.5'
+gem 'jquery-rails'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
