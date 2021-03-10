@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  root "astronauts#index"
+  root "pages#index"
 
-  get "/astronauts", to: "astronauts#index"
-  get "/test", to: "astronauts#test"
+  resources :astronauts
 end

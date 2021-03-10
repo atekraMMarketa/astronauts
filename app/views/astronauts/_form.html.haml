@@ -1,0 +1,37 @@
+.row
+  .col-xs-12.col-md-6
+    .form-group.form-group-lg
+      %label{:for => "name"}
+        = "Astronaut name"
+      .validate-input{"data-validate" => "Name can't be blank!"}
+        = f.text_field :name, :class => 'form-control input-lg input100', :id => 'name'
+  .col-xs-12.col-md-6
+    .form-group.form-group-lg
+      %label{:for => "surname"}
+        = "Astronaut surname"
+      .validate-input{"data-validate" => "Surname can't be blank!"}
+        = f.text_field :surname, :class => 'form-control input-lg input100', :id => 'surname'
+.row
+  .col-xs-12.col-md-6
+    .form-group.form-group-lg
+      %label{:for => "gender"}
+        = "Gender"
+      .validate-input{"data-validate" => "Gender can't be blank!"}
+        = f.select :gender, ['Women', 'Men'], {}, :class => 'form-control input100 selectBoxSingle', :id => 'gender'
+  .col-xs-12.col-md-6
+    .form-group.form-group-lg
+      %label{:for => "age"}
+        = "Astronaut age"
+      = f.text_field :age, :class => 'form-control input-lg', :id => 'age', :type => "integer"
+.row
+  .col-xs-12.col-md-6
+    .form-group.form-group-lg
+      %label{:for => "number_of_space_visits"}
+        = "Number of space visits"
+      = f.text_field :number_of_space_visits, :class => 'form-control input-lg', :id => 'number_of_space_visits', :type => "integer"
+.row
+  .col-xs-12
+    .form-group
+      %label{:for => "description"}
+        Description
+      = f.rich_text_area :description, :class => 'custom-trix-editor', :id => 'description'

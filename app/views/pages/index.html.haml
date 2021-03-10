@@ -1,0 +1,142 @@
+%section#main-slider.no-margin
+  .carousel.slide{"data-ride" => "carousel"}
+    .carousel-inner
+      .item.active
+        .container
+          .row
+            .col-sm-12
+              .carousel-content.center.centered
+                %h2.boxed.animation.animated-item-1.fade-down WE HAVE A LARGE DATABASE OF ASTRONAUTS
+                %p.boxed.animation.animated-item-2.fade-up You can also expand this database. Just register now!
+                %br/
+                %a.btn.btn-md.animation.bounce-in{:href => "#services"} Learn More
+#content-wrapper
+  %section#services.white
+    .container
+      .gap
+      .row
+        .col-md-12
+          .center.gap.fade-down.section-heading
+            %h2.main-title What can you do here?
+            %hr/
+            %p We maintain and, with your help, constantly expand the database of astronauts. After registration, you can do the following actions.
+
+      .row
+        .col-md-4.col-sm-6
+          .service-block
+            .pull-left.bounce-in
+              %i.fa.fa-list.fa.fa-md
+            .media-body.fade-up
+              %h3.media-heading List of astronauts
+              %p You can see list of all astronauts. There is a some filter by gender.
+        .col-md-4.col-sm-6
+          .service-block
+            .pull-left.bounce-in
+              %i.fa.fa-eye.fa.fa-md
+            .media-body.fade-up
+              %h3.media-heading Show
+              %p You can see a specific astronaut page with info about astronaut such us a name, surname, some description, gender, age and the number of space visits.
+        .col-md-4.col-sm-6
+          .service-block
+            .pull-left.bounce-in
+              %i.fa.fa-plus.fa.fa-md
+            .media-body.fade-up
+              %h3.media-heading Create new
+              %p You can create new astronauts. You can also export data from XML file!
+              %a{:href => "https://en.wikipedia.org/wiki/XML", :target => "_blank"} More about XML
+
+      .row
+        .col-md-4.col-sm-6
+          .service-block
+            .pull-left.bounce-in
+              %i.fa.fa-pencil.fa.fa-md
+            .media-body.fade-up
+              %h3.media-heading Edit
+              %p You can update some info about specific astronaut. Please use this feature with reason.
+        .col-md-4.col-sm-6
+          .service-block
+            .pull-left.bounce-in
+              %i.fa.fa-trash.fa.fa-md
+            .media-body.fade-up
+              %h3.media-heading destroy
+              %p You can destroy some astronaut from database.
+      .gap
+  %section#stats.divider-section
+    .gap
+    .container
+      .row
+        .col-md-3.col-xs-6
+          .center.bounce-in
+            %span.stat-icon
+              %i.fas.fa-mars
+            %h1
+              %span.counter= Astronaut.all.mens.count
+            %h3 Mens
+        .col-md-3.col-xs-6
+          .center.bounce-in
+            %span.stat-icon
+              %i.fas.fa-venus
+            %h1
+              %span.counter= Astronaut.all.womens.count
+            %h3 Womens
+        .col-md-3.col-xs-6
+          .center.bounce-in
+            %span.stat-icon
+              %i.fas.fa-arrow-down
+            %h1
+              %span.counter= Astronaut.all.age_under_40.count
+            %h3 Age under 40
+        .col-md-3.col-xs-6
+          .center.bounce-in
+            %span.stat-icon
+              %i.fas.fa-arrow-up
+            %h1
+              %span.counter= Astronaut.all.age_over_40.count
+            %h3 Age over 40
+    .gap
+
+  %section#contact.white
+    .container
+      .gap
+      .center.gap.fade-down.section-heading
+        %h2.main-title Get In Touch
+        %hr/
+        %p Of an or game gate west face shed. ﻿no great but music too old found arose.
+      .gap
+      .row
+        .col-md-4.fade-up
+          %h3 Contact Information
+          %p
+            %span.icon.icon-home>
+            Time Square, New York
+            %br/
+            = succeed "+36" do
+              %span.icon.icon-phone
+            %br/
+            = succeed "+36" do
+              %span.icon.icon-mobile
+            %br/
+            %span.icon.icon-envelop
+            %a{:href => "#"} email@infinityteam.com
+            %br/
+            %span.icon.icon-twitter
+            %a{:href => "#"} @infinityteam.com
+            %br/
+            %span.icon.icon-facebook
+            %a{:href => "#"} Infinity Agency
+            %br/
+        / col
+        .col-md-8.fade-up
+          %h3 Drop Us A Message
+          %br/
+          %br/
+          #message
+          %form#contactform{:action => "", :method => "post"}
+            %input#name{:name => "name", :placeholder => "Name", :type => "text"}/
+            %input#email{:name => "email", :placeholder => "Email", :type => "text"}/
+            %input#website{:name => "website", :placeholder => "Website", :type => "text"}/
+            %textarea#comments{:name => "comments", :placeholder => "Comments"}
+            %input.btn.btn-outlined.btn-primary{:name => "submit", :type => "submit", :value => "Submit"}/
+        / col
+      / row
+      .gap

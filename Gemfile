@@ -8,6 +8,8 @@ gem 'haml'
 gem 'pg', '~> 1.2.3'
 gem 'jquery-ui-rails', '5.0.5'
 gem 'jquery-rails'
+gem 'annotate'
+gem 'simple_form'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'

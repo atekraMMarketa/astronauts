@@ -1,0 +1,32 @@
+#preloader
+%header.navbar.navbar-inverse.navbar-fixed-top{:role => "banner"}
+  .container
+    .navbar-header
+      %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", :type => "button"}
+        %span.sr-only Toggle navigation
+        %i.fa.fa-bars
+      %a.navbar-brand{:href => root_path}
+        %h1
+          %i.fas.fa-globe
+          Astronauts
+    .collapse.navbar-collapse
+      %ul.nav.navbar-nav.navbar-right
+        %li
+          %a{:href => root_path} Home
+        %li.dropdown.active
+          %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+            Astronauts
+            %i.icon-angle-down
+          %ul.dropdown-menu
+            %li.active
+              %a{:href => astronauts_path} List
+            %li
+              %a{:href => new_astronaut_path} Create new
+        %li
+          %a{:href => "#"} Register
+        %li
+          %a{:href => "#"} Login
+        -#%li
+        -#  %span.search-trigger
+        -#    %i.fa.fa-search
+/ /header
