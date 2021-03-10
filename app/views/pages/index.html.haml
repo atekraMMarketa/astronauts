@@ -13,6 +13,7 @@
 #content-wrapper
   %section#services.white
     .container
+      = flash_messages_for
       .gap
       .row
         .col-md-12
@@ -118,7 +119,7 @@
           %br/
           %br/
           #message
-          = simple_form_for :feedback, :url => send_feedback_pages_path, :method => :post, :html => { :class => 'validate-form', :id => 'contactform' } do |f|
+          = simple_form_for :feedback, :url => send_feedback_pages_path, :method => :post, :html => { :class => 'validate-form' } do |f|
             .form-group.form-group-lg
               .validate-input{"data-validate" => "Name can't be blank!"}
                 = f.text_field :name, :class => 'form-control input-lg input100', :id => 'name', :placeholder => "Name"

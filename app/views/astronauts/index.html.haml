@@ -16,7 +16,7 @@
       .center.gap.fade-down.section-heading
         %h2.main-title List of astronauts
         %hr/
-        %p Lorem ipsum.
+        = flash_messages_for
       %ul.portfolio-filter.fade-down.center
         %li
           %a.btn.btn-outlined.btn-primary.active{"data-filter" => "*", :href => "#"} All
@@ -24,77 +24,9 @@
           %a.btn.btn-outlined.btn-primary{"data-filter" => ".mens", :href => "#"} Mens
         %li
           %a.btn.btn-outlined.btn-primary{"data-filter" => ".womens", :href => "#"} Womens
-      / /#portfolio-filter
       %ul.portfolio-items.col-3.isotope.fade-up
         - if @astronauts.present?
           - @astronauts.each do |astronaut|
-            = astronaut.full_name
             = render "astronauts/astronaut", astronaut: astronaut
         - else
           %p NO DATA!
-          jfskldjflksdjfklsdjfkljsdlkfjslk
-
-        -#/ /.portfolio-item
-        -#%li.portfolio-item.joomla.mens.isotope-item
-        -#  .item-inner
-        -#    %img{:alt => "", :src => "http://placehold.it/800x600"}/
-        -#    %h5 Lorem ipsum dolor sit amet
-        -#    .overlay
-        -#      %a.preview.btn.btn-outlined.btn-primary{:href => "http://placehold.it/800x600", :rel => "prettyPhoto"}
-        -#        %i.fa.fa-eye
-        -#/ /.portfolio-item
-        -#%li.portfolio-item.bootstrap.mens.isotope-item
-        -#  .item-inner
-        -#    %img{:alt => "", :src => "http://placehold.it/800x600"}/
-        -#    %h5 Lorem ipsum dolor sit amet
-        -#    .overlay
-        -#      %a.preview.btn.btn-outlined.btn-primary{:href => "http://placehold.it/800x600", :rel => "prettyPhoto"}
-        -#        %i.fa.fa-eye
-        -#/ /.portfolio-item
-        -#%li.portfolio-item.joomla.womens.apps.isotope-item
-        -#  .item-inner
-        -#    %img{:alt => "", :src => "http://placehold.it/800x600"}/
-        -#    %h5 Lorem ipsum dolor sit amet
-        -#    .overlay
-        -#      %a.preview.btn.btn-outlined.btn-primary{:href => "http://placehold.it/800x600", :rel => "prettyPhoto"}
-        -#        %i.fa.fa-eye
-        -#/ /.portfolio-item
-        -#%li.portfolio-item.joomla.womens.isotope-item
-        -#  .item-inner
-        -#    %img{:alt => "", :src => "http://placehold.it/800x600"}/
-        -#    %h5 Lorem ipsum dolor sit amet
-        -#    .overlay
-        -#      %a.preview.btn.btn-outlined.btn-primary{:href => "http://placehold.it/800x600", :rel => "prettyPhoto"}
-        -#        %i.fa.fa-eye
-        -#/ /.portfolio-item
-        -#%li.portfolio-item.mens.html.isotope-item
-        -#  .item-inner
-        -#    %img{:alt => "", :src => "http://placehold.it/800x600"}/
-        -#    %h5 Lorem ipsum dolor sit amet
-        -#    .overlay
-        -#      %a.preview.btn.btn-outlined.btn-primary{:href => "http://placehold.it/800x600", :rel => "prettyPhoto"}
-        -#        %i.fa.fa-eye
-        -#/ /.portfolio-item
-        -#%li.portfolio-item.joomla.mens.apps.isotope-item
-        -#  .item-inner
-        -#    %img{:alt => "", :src => "http://placehold.it/800x600"}/
-        -#    %h5 Lorem ipsum dolor sit amet
-        -#    .overlay
-        -#      %a.preview.btn.btn-outlined.btn-primary{:href => "http://placehold.it/800x600", :rel => "prettyPhoto"}
-        -#        %i.fa.fa-eye
-        -#/ /.portfolio-item
-        -#%li.portfolio-item.joomla.womens.isotope-item
-        -#  .item-inner
-        -#    %img{:alt => "", :src => "http://placehold.it/800x600"}/
-        -#    %h5 Lorem ipsum dolor sit amet
-        -#    .overlay
-        -#      %a.preview.btn.btn-outlined.btn-primary{:href => "http://placehold.it/800x600", :rel => "prettyPhoto"}
-        -#        %i.fa.fa-eye
-        -#/ /.portfolio-item
-        -#%li.portfolio-item.mens.html.isotope-item
-        -#  .item-inner
-        -#    %img{:alt => "", :src => "http://placehold.it/800x600"}/
-        -#    %h5 Lorem ipsum dolor sit amet
-        -#    .overlay
-        -#      %a.preview.btn.btn-outlined.btn-primary{:href => "http://placehold.it/800x600", :rel => "prettyPhoto"}
-        -#        %i.fa.fa-eye
