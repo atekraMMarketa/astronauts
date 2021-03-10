@@ -3,6 +3,20 @@
     .container
       .gap
       .center.gap.fade-down.section-heading
+        = flash_messages_for
         %h2.main-title= @astronaut.full_name
-        %hr/
-        %p Lorem ipsum.
+        %hr
+        %b= "Age: "
+        = @astronaut.age
+        %hr
+        %b= "Gender: "
+        = @astronaut.gender
+        %hr
+        %b= "Number of space visits: "
+        = @astronaut.number_of_space_visits
+        %hr
+        %h4= "Description"
+        %p= @astronaut.description
+        %hr
+        %a.btn.btn-outlined.btn-primary{:href => edit_astronaut_path(@astronaut)} Manage astronaut
+        %a.btn.btn-outlined.btn-danger{:href => astronaut_path(@astronaut), :data => { :method => :delete, :confirm => 'Are you sure?' }, :title => 'Delete' } Delete astronaut

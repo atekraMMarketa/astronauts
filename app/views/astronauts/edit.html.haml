@@ -3,6 +3,14 @@
     .container
       .gap
       .center.gap.fade-down.section-heading
-        %h2.main-title= "Edit astronaut #{astronaut.full_name}"
+        %h2.main-title= "Edit astronaut #{@astronaut.full_name}"
         %hr/
-        %p Lorem ipsum.
+      .gap
+      = simple_form_for @astronaut, :html => { :class => 'validate-form' } do |f|
+        = render :partial => "form", :locals => { :f => f }
+        .row
+          .col-xs-6.text-left
+            %a.btn.btn-outlined.btn-white-with-black{:href => astronauts_path} Cancel
+          .col-xs-6.text-right
+            %button.btn.btn-outlined.btn-primary{:type => "submit"}
+              Submit

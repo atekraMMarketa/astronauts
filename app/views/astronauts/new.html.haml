@@ -5,13 +5,12 @@
       .center.gap.fade-down.section-heading
         %h2.main-title New astronaut
         %hr/
-        %p Lorem ipsum.
       .gap
-        = simple_form_for @astronaut, :html => { :class => 'validate-form' } do |f|
-          = render :partial => "form", :locals => { :f => f }
-          .row
-            .col-xs-6.text-left
-              %a.btn.btn-outlined.btn-white-with-black{:href => astronauts_path} Cancel
-            .col-xs-6.text-right
-              %button.btn.btn-outlined.btn-primary{:type => "submit"}
-                Submit
+      = simple_form_for @astronaut, :html => { :class => 'validate-form' } do |f|
+        = render :partial => "form", :locals => { :f => f }
+        .row
+          .col-xs-6.text-left
+            %a.btn.btn-outlined.btn-white-with-black{:href => astronauts_path} Cancel
+          .col-xs-6.text-right
+            %button.btn.btn-outlined.btn-primary{:type => "submit"}
+              Submit
