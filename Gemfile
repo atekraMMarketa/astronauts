@@ -10,6 +10,8 @@ gem 'jquery-ui-rails', '5.0.5'
 gem 'jquery-rails'
 gem 'annotate'
 gem 'simple_form'
+gem "font-awesome-rails"
+gem "font-awesome-sass", "< 5.0.13"
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
