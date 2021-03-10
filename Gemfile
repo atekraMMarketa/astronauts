@@ -12,7 +12,7 @@ gem 'annotate'
 gem 'simple_form'
 gem "font-awesome-rails"
 gem "font-awesome-sass", "< 5.0.13"
-
+gem 'pagy', '~> 3.5'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.2'

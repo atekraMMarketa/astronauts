@@ -1,0 +1,63 @@
+/* ===================== FILE INPUT ===================== */
+/* line 2, app/assets/stylesheets/file_input.scss */
+.file-area {
+  width: 100%;
+  position: relative;
+}
+
+/* line 6, app/assets/stylesheets/file_input.scss */
+.file-area input[type=file] {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* line 18, app/assets/stylesheets/file_input.scss */
+.file-area .file-dummy {
+  width: 100%;
+  padding: 30px;
+  background: rgba(140, 140, 140, 0.2);
+  border: 2px dashed rgba(255, 255, 255, 0.2);
+  text-align: center;
+  transition: background 0.3s ease-in-out;
+  color: #878787;
+}
+
+/* line 27, app/assets/stylesheets/file_input.scss */
+.file-area .file-dummy .success {
+  display: none;
+}
+
+/* line 32, app/assets/stylesheets/file_input.scss */
+.file-area:hover .file-dummy {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* line 36, app/assets/stylesheets/file_input.scss */
+.file-area input[type=file]:focus + .file-dummy {
+  outline: 2px solid rgba(255, 255, 255, 0.5);
+  outline: -webkit-focus-ring-color auto 5px;
+}
+
+/* line 41, app/assets/stylesheets/file_input.scss */
+.file-area input[type=file]:valid + .file-dummy {
+  border-color: #000000;
+  background-color: #00b29e;
+  color: #fff;
+}
+
+/* line 45, app/assets/stylesheets/file_input.scss */
+.file-area input[type=file]:valid + .file-dummy .success {
+  display: inline-block;
+}
+
+/* line 48, app/assets/stylesheets/file_input.scss */
+.file-area input[type=file]:valid + .file-dummy .default {
+  display: none;
+}

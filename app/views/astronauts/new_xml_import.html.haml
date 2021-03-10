@@ -1,0 +1,23 @@
+#content-wrapper
+  %section.white
+    .container
+      .gap
+      .center.gap.fade-down.section-heading
+        %h2.main-title Import astronauts from XML file
+        = flash_messages_for
+        %hr/
+      .gap
+      = simple_form_for :xml_import, :url => parse_xml_astronauts_path, :method => :post do |f|
+        .form-group.file-area
+          = f.hidden_field :xml_file_for_import_cache
+          = f.file_field :xml_file_for_import, :required => true
+          .file-dummy
+            .success XML file selected.
+            .default Please add XML file
+
+        .row
+          .col-xs-6.text-left
+            %a.btn.btn-outlined.btn-white-with-black{:href => astronauts_path} Cancel
+          .col-xs-6.text-right
+            %button.btn.btn-outlined.btn-primary{:type => "submit"}
+              Submit

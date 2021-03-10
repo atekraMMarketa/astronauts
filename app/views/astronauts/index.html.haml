@@ -13,6 +13,10 @@
   %section#portfolio.white
     .container
       .gap
+        .pull-right
+          %a.btn.btn-outlined.btn-info{:href => new_xml_import_astronauts_path} Import from XML file
+          %br
+      %br
       .center.gap.fade-down.section-heading
         %h2.main-title List of astronauts
         %hr/
@@ -30,3 +34,6 @@
             = render "astronauts/astronaut", astronaut: astronaut
         - else
           %p NO DATA!
+      .row
+        .col-md-12.text-right
+          = pagy_bootstrap_nav(@pagy).html_safe

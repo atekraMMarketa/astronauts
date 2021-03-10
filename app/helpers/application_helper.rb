@@ -1,4 +1,5 @@
 module ApplicationHelper
+  include Pagy::Frontend
 
   BOOTSTRAP_FLASH_MSG = {
       notice: 'alert-success',
