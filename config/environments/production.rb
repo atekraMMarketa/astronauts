@@ -70,7 +70,7 @@ Rails.application.configure do
       port:            587,
       authentication: :plain,
       user_name:      'apikey',
-      password:        ENV['SENDGRID_API_KEY']
+      password:       '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'
   }
 
   config.action_mailer.default_url_options = { host: "https://astronauts-dataweps-demo.herokuapp.com/" }

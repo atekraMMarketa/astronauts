@@ -3,54 +3,43 @@
     .container
       .row
         .col-md-3.col-sm-6.about-us-widget
-          %h4 Global Coverage
-          %p Was drawing natural fat respect husband. An as noisy an offer drawn blush place. These tried for way joy wrote witty. In mr began music weeks after at begin.
-        / /.col-md-3
+          %h4 Astronauts
+          %p This project was created as a demo application for the company dataweps.
         .col-md-3.col-sm-6
-          %h4 Company
+          %h4 Menu
           %div
             %ul.arrow
               %li
-                %a{:href => "#"} Company Overview
+                %a{:href => root_path} Home
               %li
-                %a{:href => "#"} Meet The Team
+                %a{:href => astronauts_path} List of astronauts
               %li
-                %a{:href => "#"} Our Awesome Partners
+                %a{:href => new_astronaut_path} Create new astronaut
               %li
-                %a{:href => "#"} Our Services
+                %a{:href => "#"} Log in
+              %li
+                %a{:href => "#"} Register
         / /.col-md-3
         .col-md-3.col-sm-6
-          %h4 Latest Articles
+          %h4 Latest Astronauts
           %div
-            .media
-              .pull-left
-                %img.widget-img{:alt => "", :src => path_to_image("portfolio/folio01.jpg")}/
-              .media-body
-                %span.media-heading
-                  %a{:href => "#"} Blog Post A
-                %small.muted Posted 14 April 2014
-            .media
-              .pull-left
-                %img.widget-img{:alt => "", :src => path_to_image("portfolio/folio02.jpg")}/
-              .media-body
-                %span.media-heading
-                  %a{:href => "#"} Blog Post B
-                %small.muted Posted 14 April 2014
-        / /.col-md-3
+            - Astronaut.last(2).each do |astronaut|
+              .media
+                .pull-left
+                  %img.widget-img{:alt => "", :src => path_to_image(astronaut.avatar_url)}/
+                .media-body
+                  %span.media-heading
+                    = astronaut.full_name
+                  %small.muted= "#{astronaut.gender}, #{astronaut.age}"
+
         .col-md-3.col-sm-6
-          %h4 Come See Us
+          %h4 Contact info
           %address
-            %strong Ace Towers
+            %span= fa_icon "envelope"
+            %a{:href => "mailto:marketa.glatzova@gmail.com"} marketa.glatzova@gmail.com
             %br/
-            New York Ave,
-            %br/
-            New York, 215648
-            %br/
-            %abbr{:title => "Phone"}
-              = fa_icon "phone"
-            546 840654 05
-        / /.col-md-3
-  / /#bottom
+            %span= fa_icon "linkedin-square"
+            %a{:href => "https://www.linkedin.com/in/mark%C3%A9ta-glatzov%C3%A1-881683144/", :target => "_blank"} Markéta Glatzová
   %footer#footer
     .container
       .row
@@ -61,5 +50,4 @@
             %li
               %a#gototop.gototop{:href => "#"}
                 = fa_icon "chevron-up"
-            / #gototop
 
