@@ -11,8 +11,7 @@
           = render :partial => "form", :locals => { :f => f }
           .row
             .col-xs-6.text-left
-              %a.btn.btn-discard{ :href => astronauts_path }
-                Cancel
+              %a.btn.btn-outlined.btn-white-with-black{:href => astronauts_path} Cancel
             .col-xs-6.text-right
-              %button.btn.btn-success{:type => "submit"}
+              %button.btn.btn-outlined.btn-primary{:type => "submit"}
                 Submit

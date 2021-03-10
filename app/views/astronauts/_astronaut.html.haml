@@ -1,8 +1,7 @@
 %li.portfolio-item.isotope-item{class: astronaut.class_for_search}
   .item-inner
     %img{:alt => "", :src => path_to_image(astronaut.avatar_url)}/
-    %h5= astronaut.full_name
     .overlay
       %a.preview.btn.btn-outlined.btn-primary{:href => astronaut_path(astronaut)}
-        %i.fa.fa-eye
+        = fa_icon "eye"
 

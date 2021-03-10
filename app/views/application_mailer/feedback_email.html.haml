@@ -1,0 +1,109 @@
+!!!
+%html
+  %head
+    %title
+    %meta{:content => "text/html; charset=utf-8", "http-equiv" => "Content-Type"}/
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
+    %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}/
+    :css
+      /* CLIENT-SPECIFIC STYLES */
+      body,
+      table,
+      td,
+      a {
+          -webkit-text-size-adjust: 100%;
+          -ms-text-size-adjust: 100%;
+      }
+
+      table,
+      td {
+          mso-table-lspace: 0pt;
+          mso-table-rspace: 0pt;
+      }
+
+      img {
+          -ms-interpolation-mode: bicubic;
+      }
+
+      /* RESET STYLES */
+      img {
+          border: 0;
+          height: auto;
+          line-height: 100%;
+          outline: none;
+          text-decoration: none;
+      }
+
+      table {
+          border-collapse: collapse !important;
+      }
+
+      body {
+          height: 100% !important;
+          margin: 0 !important;
+          padding: 0 !important;
+          width: 100% !important;
+      }
+
+      /* iOS BLUE LINKS */
+      a[x-apple-data-detectors] {
+          color: inherit !important;
+          text-decoration: none !important;
+          font-size: inherit !important;
+          font-family: inherit !important;
+          font-weight: inherit !important;
+          line-height: inherit !important;
+      }
+
+      /* MOBILE STYLES */
+      @media screen and (max-width:600px) {
+          h1 {
+              font-size: 32px !important;
+              line-height: 32px !important;
+          }
+      }
+
+      /* ANDROID CENTER FIX */
+      div[style*="margin: 16px 0;"] {
+          margin: 0 !important;
+      }
+
+  %body{:style => "background-color: #f4f4f4; margin: 0 !important; padding: 0 !important; font-family: Helvetica, Arial, sans-serif;"}
+    %table{:style => "border: 0; width: 100%;"}
+      %tr
+        %td{:style => "background-image: linear-gradient(103deg, #5fd2ff, #7d3cff); padding: 0px 10px 0px 10px;", :align => "center"}
+          %table{:style => "margin-top: 20px; width: 650px;", :border => "0", :cellpadding => "0", :cellspacing => "0", :width => "100%"}
+            %tr
+              %td{:style => "background-color: #ffffff;padding: 80px 20px 20px 20px;border-radius: 4px 4px 0px 0px;font-weight: 400;letter-spacing: 4px;line-height: 48px;width: 600px;", :align => "center", :valign => "top"}
+                %a{:style => "text-decoration: none;float: none;width: 100%;height: 60px;padding: 10px 0;justify-content: center;border-right: 0;", :href => "https://astronauts-dataweps-demo.herokuapp.com/"}
+                  %img{:style => "display: block;border: 0px;height: 110px;width: 500px;", :src => "https://res.cloudinary.com/hzmasyelt/image/upload/v1615319936/moon.jpg", :alt => "Logo"}
+
+      %tr
+        %td{:align => "center"}
+          %table{:style => "width: 650px;background-color:  #ffffff;color: #666666;font-size: 18px;font-weight: 400;line-height: 25px;"}
+            %tr
+              %td{:style => "padding: 20px 30px 20px 30px", :align => "left"}
+                %div{:style => "color: #6b6b6f !important;font-size: 20px !important;"}
+                  %h1{:style => "font-weight: 400;margin: 2px;"}= "Hi support team, "
+                %p{:style => "margin-top: 35px;"}
+                  = "You have got a new feedback!"
+            %tr
+              %td{:style => "padding: 0px 0px 0px 30px;", :align => "left"}
+                %p{:style => "margin: 0;"}
+                  %div{:style => "font-weight: bold;"}="Full name:"
+                  %div= @name
+            %tr
+              %td{:style => "padding: 0px 30px 0px 30px;", :align => "left"}
+                %p{:style => "margin: 0;"}
+                  %div{:style => "font-weight: bold;"}="Email:"
+                  %div{:style => "text-decoration: none;color: #5fd2ff;"}= @email
+            %tr
+              %td{:style => "padding: 0px 30px 20px 30px;", :align => "left"}
+                %p{:style => "margin: 0;"}
+                  %div{:style => "font-weight: bold;"}="Description of feedback:"
+                  %div= @comments
+      %tr
+        %td
+          %table
+            %tr
+              %td{:style => "padding: 0px 30px 30px 30px; line-height: 18px;"}

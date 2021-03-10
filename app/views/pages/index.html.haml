@@ -25,21 +25,21 @@
         .col-md-4.col-sm-6
           .service-block
             .pull-left.bounce-in
-              %i.fa.fa-list.fa.fa-md
+              = fa_icon "list", class: "fa-md"
             .media-body.fade-up
               %h3.media-heading List of astronauts
               %p You can see list of all astronauts. There is a some filter by gender.
         .col-md-4.col-sm-6
           .service-block
             .pull-left.bounce-in
-              %i.fa.fa-eye.fa.fa-md
+              = fa_icon "eye", class: "fa-md"
             .media-body.fade-up
               %h3.media-heading Show
               %p You can see a specific astronaut page with info about astronaut such us a name, surname, some description, gender, age and the number of space visits.
         .col-md-4.col-sm-6
           .service-block
             .pull-left.bounce-in
-              %i.fa.fa-plus.fa.fa-md
+              = fa_icon "plus", class: "fa-md"
             .media-body.fade-up
               %h3.media-heading Create new
               %p You can create new astronauts. You can also export data from XML file!
@@ -49,14 +49,14 @@
         .col-md-4.col-sm-6
           .service-block
             .pull-left.bounce-in
-              %i.fa.fa-pencil.fa.fa-md
+              = fa_icon "pencil", class: "fa-md"
             .media-body.fade-up
               %h3.media-heading Edit
               %p You can update some info about specific astronaut. Please use this feature with reason.
         .col-md-4.col-sm-6
           .service-block
             .pull-left.bounce-in
-              %i.fa.fa-trash.fa.fa-md
+              = fa_icon "trash", class: "fa-md"
             .media-body.fade-up
               %h3.media-heading destroy
               %p You can destroy some astronaut from database.
@@ -68,28 +68,28 @@
         .col-md-3.col-xs-6
           .center.bounce-in
             %span.stat-icon
-              %i.fa.fa-mars
+              = fa_icon "mars"
             %h1
               %span.counter= Astronaut.all.mens.count
             %h3 Mens
         .col-md-3.col-xs-6
           .center.bounce-in
             %span.stat-icon
-              %i.fa.fa-venus
+              = fa_icon "venus"
             %h1
               %span.counter= Astronaut.all.womens.count
             %h3 Womens
         .col-md-3.col-xs-6
           .center.bounce-in
             %span.stat-icon
-              %i.fa.fa-arrow-down
+              = fa_icon "arrow-down"
             %h1
               %span.counter= Astronaut.all.age_under_40.count
             %h3 Age under 40
         .col-md-3.col-xs-6
           .center.bounce-in
             %span.stat-icon
-              %i.fa.fa-arrow-up
+              = fa_icon "arrow-up"
             %h1
               %span.counter= Astronaut.all.age_over_40.count
             %h3 Age over 40
@@ -101,42 +101,33 @@
       .center.gap.fade-down.section-heading
         %h2.main-title Get In Touch
         %hr/
-        %p Of an or game gate west face shed. ﻿no great but music too old found arose.
+        %p Please feel free to contact me with some questions or problems.
       .gap
       .row
         .col-md-4.fade-up
           %h3 Contact Information
           %p
-            %span.icon.icon-home>
-            Time Square, New York
+            %span= fa_icon "envelope"
+            %a{:href => "mailto:marketa.glatzova@gmail.com"} marketa.glatzova@gmail.com
             %br/
-            = succeed "+36" do
-              %span.icon.icon-phone
+            %span= fa_icon "linkedin-square"
+            %a{:href => "https://www.linkedin.com/in/mark%C3%A9ta-glatzov%C3%A1-881683144/", :target => "_blank"} Markéta Glatzová
             %br/
-            = succeed "+36" do
-              %span.icon.icon-mobile
-            %br/
-            %span.icon.icon-envelop
-            %a{:href => "#"} email@infinityteam.com
-            %br/
-            %span.icon.icon-twitter
-            %a{:href => "#"} @infinityteam.com
-            %br/
-            %span.icon.icon-facebook
-            %a{:href => "#"} Infinity Agency
-            %br/
-        / col
         .col-md-8.fade-up
-          %h3 Drop Us A Message
+          %h3 Drop Me A Message
           %br/
           %br/
           #message
-          %form#contactform{:action => "", :method => "post"}
-            %input#name{:name => "name", :placeholder => "Name", :type => "text"}/
-            %input#email{:name => "email", :placeholder => "Email", :type => "text"}/
-            %input#website{:name => "website", :placeholder => "Website", :type => "text"}/
-            %textarea#comments{:name => "comments", :placeholder => "Comments"}
-            %input.btn.btn-outlined.btn-primary{:name => "submit", :type => "submit", :value => "Submit"}/
-        / col
-      / row
+          = simple_form_for :feedback, :url => send_feedback_pages_path, :method => :post, :html => { :class => 'validate-form', :id => 'contactform' } do |f|
+            .form-group.form-group-lg
+              .validate-input{"data-validate" => "Name can't be blank!"}
+                = f.text_field :name, :class => 'form-control input-lg input100', :id => 'name', :placeholder => "Name"
+            .form-group.form-group-lg
+              .validate-input{"data-validate" => "Email is required! For example: sample@google.com."}
+                = f.text_field :email, :class => 'form-control input-lg input100', :id => 'email', :placeholder => "Email" , :type => 'email'
+            .form-group.form-group-lg
+              = f.text_area :comments, :class => 'form-control input-lg', :id => 'comments', :placeholder => "Comments", rows: 8
+            .text-right
+              %button.btn.btn-outlined.btn-primary{:type => "submit"}
+                Submit
       .gap

@@ -1682,6 +1682,18 @@ img.author-box-image {
 }
 
 
+.btn-outlined.btn-white-with-black {
+    background: none;
+    border: 2px solid #000000;
+    color: #000000;
+}
+
+.btn-outlined.btn-white-with-black:hover,
+.btn-outlined.btn-white-with-black:active {
+    color: #fff;
+    background: #000000;
+}
+
 /*-----------------------------------------------------------------------------------*/
 
 

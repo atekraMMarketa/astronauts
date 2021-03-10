@@ -4,10 +4,10 @@
     .navbar-header
       %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", :type => "button"}
         %span.sr-only Toggle navigation
-        %i.fa.fa-bars
+        = fa_icon "bars"
       %a.navbar-brand{:href => root_path}
         %h1
-          %i.fa.fa-globe
+          = fa_icon "globe"
           Astronauts
     .collapse.navbar-collapse
       %ul.nav.navbar-nav.navbar-right
