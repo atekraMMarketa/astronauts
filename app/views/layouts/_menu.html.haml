@@ -25,10 +25,4 @@
             %li
               %a{:href => new_xml_import_astronauts_path} Import astronauts from XML
         %li
-          %a{:href => "#"} Register
-        %li
-          %a{:href => "#"} Login
-        -#%li
-        -#  %span.search-trigger
-        -#    %i.fa.fa-search
-/ /header
+          = render "users/sessions/sign_in_with_google"
