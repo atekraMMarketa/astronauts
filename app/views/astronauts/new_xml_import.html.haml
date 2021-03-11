@@ -7,6 +7,7 @@
         = flash_messages_for
         %hr/
       .gap
+      #loading
       = simple_form_for :xml_import, :url => parse_xml_astronauts_path, :method => :post do |f|
         .form-group.file-area
           = f.hidden_field :xml_file_for_import_cache
@@ -19,5 +20,6 @@
           .col-xs-6.text-left
             %a.btn.btn-outlined.btn-white-with-black{:href => astronauts_path} Cancel
           .col-xs-6.text-right
-            %button.btn.btn-outlined.btn-primary{:type => "submit"}
+            %button.hidden.submit-button{:type => "submit"}
+            %button.btn.btn-outlined.btn-primary.show-loading
               Submit
