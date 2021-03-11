@@ -29,3 +29,4 @@
             = render "users/sessions/sign_in_with_google"
           - else
             %a{:href => destroy_user_session_path} Log out
+            %img.avatar{:alt => "", :src => path_to_image(@current_user.avatar_url)}
