@@ -25,4 +25,7 @@
             %li
               %a{:href => new_xml_import_astronauts_path} Import astronauts from XML
         %li
-          = render "users/sessions/sign_in_with_google"
+          - if !@current_user.present?
+            = render "users/sessions/sign_in_with_google"
+          - else
+            %a{:href => destroy_user_session_path} Log out

@@ -13,9 +13,10 @@ gem 'simple_form'
 gem "font-awesome-rails"
 gem "font-awesome-sass", "< 5.0.13"
 gem 'pagy', '~> 3.5'
-gem 'devise', github: 'heartcombo/devise'
+gem 'devise', github: 'heartcombo/devise', branch: 'ca-omniauth-2'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
+gem "omniauth-rails_csrf_protection"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.2'
