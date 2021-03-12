@@ -18,8 +18,8 @@ class Astronaut < ActiveRecord::Base
   validates_presence_of :name, :surname, :gender
 
   default_scope { order(created_at: :desc) }
-  scope :mens, -> { where(gender:  'Men' ) }
-  scope :womens, -> { where(gender:  'Women' ) }
+  scope :men, -> { where(gender:  'Men' ) }
+  scope :women, -> { where(gender:  'Women' ) }
   scope :age_under_40, -> { where('age <= 40') }
   scope :age_over_40, -> { where('age >= 40') }
 
@@ -29,9 +29,9 @@ class Astronaut < ActiveRecord::Base
 
   def class_for_search
     if gender == "Women"
-      "womens"
+      "women"
     else
-      "mens"
+      "men"
     end
   end
 
